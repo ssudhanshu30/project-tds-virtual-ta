@@ -65,6 +65,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def read_root():
+    return {"message": "Welcome to the RAG Query API. Use /query for questions or /health for status."}
+
 # ─────────────────────────────────────────────────────────────────────────────
 # 5) Database setup / migrations
 # ─────────────────────────────────────────────────────────────────────────────
